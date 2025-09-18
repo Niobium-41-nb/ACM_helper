@@ -1,6 +1,6 @@
 # ACM_helper
 
-由 vanadium-23 开发的 ACM 竞赛辅助工具包。
+由 vanadium-23(Niobium-41-nb) 开发的 ACM 竞赛辅助工具包。
 
 ## 项目简介
 
@@ -30,7 +30,7 @@ setup.py           # 安装脚本
 
 1. 克隆仓库到本地：
    ```
-   git clone https://github.com/vanadium-23/ACM_helper.git
+   git clone https://github.com/Niobium-41-nb/ACM_helper.git
    ```
 2. 安装依赖：
    ```
