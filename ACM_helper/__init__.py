@@ -5,7 +5,7 @@ ACM_helper - 由 vanadium-23 开发的ACM竞赛辅助工具包
 """
 
 __version__ = "0.1.0"
-__author__ = "vanadium-23"
+__author__ = "vanadium-23(Niobium-41-nb)"
 
 # 动态导入机制 - 按需导入模块，避免未使用的模块影响性能
 def _import_utils():

@@ -7,7 +7,7 @@ setup(
     # 或者明确指定包
     # packages=['ACM_helper'],
     install_requires=[],
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="vanadium-23(Niobium-41-nb)",
+    author_email="1453070926@qq.com",
     description="ACM competition helper library",
 )
