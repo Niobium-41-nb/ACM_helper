@@ -10,7 +10,7 @@ class MakeTestCasesCpp:
     """
 
     @staticmethod
-    def clean_up(std_cpp_path="std.cpp", gen_cpp_path="gen.cpp"):
+    def __clean_up(std_cpp_path="std.cpp", gen_cpp_path="gen.cpp"):
         """
         清理生成的可执行文件。
         """
@@ -59,36 +59,35 @@ class MakeTestCasesCpp:
         MakeTestCasesCpp.clean_up(std_cpp_path, gen_cpp_path)
         print(f"成功生成测试用例 {L} 到 {R}，文件保存在data文件夹中")
 
-    @staticmethod
-    def create_zip_archive():
-        """
-        将 data 文件夹中的文件压缩到 zip 根目录。
-        """
-        zip_filename = "test_cases.zip"
-        if not os.path.exists("data"):
-            print("data文件夹不存在，无法创建压缩文件")
-            return False
-        if not os.listdir("data"):
-            print("data文件夹为空，无法创建压缩文件")
-            return False
-        try:
-            with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
-                for file in os.listdir("data"):
-                    file_path = os.path.join("data", file)
-                    if os.path.isfile(file_path):
-                        zipf.write(file_path, file)
-            print(f"成功创建压缩文件: {zip_filename}")
-            print(f"压缩文件大小: {os.path.getsize(zip_filename) / 1024:.2f} KB")
-            print("解压后文件结构:")
-            print("case1.in.in")
-            print("case1.out.out")
-            print("case2.in.in")
-            print("case2.out.out")
-            print("...")
-            return True
-        except Exception as e:
-            print(f"创建压缩文件时出错: {e}")
-            return False
+
+def create_zip_archive(zip_path="data",zip_filename = "test_cases.zip"):
+    """
+    将 data 文件夹中的文件压缩到 zip 根目录。
+    """
+    if not os.path.exists(zip_path):
+        print("data文件夹不存在，无法创建压缩文件")
+        return False
+    if not os.listdir(zip_path):
+        print("data文件夹为空，无法创建压缩文件")
+        return False
+    try:
+        with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for file in os.listdir(zip_path):
+                file_path = os.path.join(zip_path, file)
+                if os.path.isfile(file_path):
+                    zipf.write(file_path, file)
+        print(f"成功创建压缩文件: {zip_filename}")
+        print(f"压缩文件大小: {os.path.getsize(zip_filename) / 1024:.2f} KB")
+        print("解压后文件结构:")
+        print("case1.in.in")
+        print("case1.out.out")
+        print("case2.in.in")
+        print("case2.out.out")
+        print("...")
+        return True
+    except Exception as e:
+        print(f"创建压缩文件时出错: {e}")
+        return False
 
 if __name__ == "__main__":
     print("=== 测试 MakeTestCasesCpp 类 ===")
