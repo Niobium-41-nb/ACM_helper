@@ -1,3 +1,8 @@
-# 在此处添加项目依赖 
-# 例如：numpy
-# matplotlib
+# ACM_helper 依赖
+# Python 标准库：subprocess, os, sys, zipfile
+# C++ 测试用例生成功能需本地安装 g++ 或 clang++
+
+# 如需扩展功能，可在此添加第三方库
+# 示例：
+# numpy>=1.21.0
+# requests>=2.25.0
